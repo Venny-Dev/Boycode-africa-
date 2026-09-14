@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!--
+      VIEWPORT META TAG
+      width=device-width  → use the device's actual screen width
+      initial-scale=1.0   → start at 100% zoom
+      Without this, mobile browsers render at ~980px and scale down.
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Design — BoyCode</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+
+    <!-- ============================================================
+         DEMO 1: RESPONSIVE NAVBAR
+         Stacks vertically on mobile, horizontal on tablet+
+    ============================================================ -->
+    <header class="navbar">
+      <a href="#" class="logo">BoyCode</a>
+
+      <nav class="nav-links">
+        <a href="#cards">Cards</a>
+        <a href="#dashboard">Dashboard</a>
+        <a href="#images">Images</a>
+        <a href="#units">Units</a>
+      </nav>
+
+      <!-- <button class="nav-button">&#9776;</button> -->
+    </header>
+
+
+    <!-- ============================================================
+         PAGE HERO
+         Uses vh unit — always fills the viewport height
+    ============================================================ -->
+    <section class="hero" id="top">
+      <div class="hero-content">
+        <h1>Responsive Design</h1>
+        <p>Resize the browser window to see layouts adapt at each breakpoint.</p>
+        <p class="breakpoint-label">
+          Current viewport: <span id="viewport-size"></span>
+        </p>
+      </div>
+    </section>
+
+
+    <main class="container">
+
+      <!-- ============================================================
+           DEMO 2: FLUID CONTAINER
+      ============================================================ -->
+      <section class="demo-section" id="fluid">
+        <h2>Fluid Container</h2>
+        <p>
+          This container uses <code>max-width: 900px; margin: 0 auto;</code>.
+          It grows with the viewport but stops at 900px.
+        </p>
+        <div class="fluid-box">
+          I adapt to my container width.
+        </div>
+      </section>
+
+
+      <!-- ============================================================
+           DEMO 3: RESPONSIVE CARD GRID
+           Mobile: 1 col → Tablet: 2 cols → Desktop: 3 cols
+      ============================================================ -->
+      <section class="demo-section" id="cards">
+        <h2>Responsive Card Grid</h2>
+        <p>Resize the window — the grid changes from 1 → 2 → 3 columns.</p>
+
+        <div class="cards">
+          <article class="card">
+            <img
+              src="https://placehold.co/400x220/4f46e5/ffffff?text=HTML"
+              alt="HTML lesson"
+              class="card-image"
+            />
+            <div class="card-body">
+              <h3>HTML</h3>
+              <p>The structure and skeleton of every webpage on the internet.</p>
+              <a href="#" class="card-btn">Learn More</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <img
+              src="https://placehold.co/400x220/2a9d8f/ffffff?text=CSS"
+              alt="CSS lesson"
+              class="card-image"
+            />
+            <div class="card-body">
+              <h3>CSS</h3>
+              <p>Styling, layout, and the visual presentation of web content.</p>
+              <a href="#" class="card-btn">Learn More</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <img
+              src="https://placehold.co/400x220/e63946/ffffff?text=JavaScript"
+              alt="JavaScript lesson"
+              class="card-image"
+            />
+            <div class="card-body">
+              <h3>JavaScript</h3>
+              <p>Interactivity, logic, and dynamic behaviour on the web.</p>
+              <a href="#" class="card-btn">Learn More</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <img
+              src="https://placehold.co/400x220/f4a261/ffffff?text=Git"
+              alt="Git lesson"
+              class="card-image"
+            />
+            <div class="card-body">
+              <h3>Git</h3>
+              <p>Version control so you never lose your work again.</p>
+              <a href="#" class="card-btn">Learn More</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <img
+              src="https://placehold.co/400x220/457b9d/ffffff?text=Flexbox"
+              alt="Flexbox lesson"
+              class="card-image"
+            />
+            <div class="card-body">
+              <h3>Flexbox</h3>
+              <p>One-dimensional layouts made simple with CSS Flexbox.</p>
+              <a href="#" class="card-btn">Learn More</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <img
+              src="https://placehold.co/400x220/6d6875/ffffff?text=Grid"
+              alt="Grid lesson"
+              class="card-image"
+            />
+            <div class="card-body">
+              <h3>CSS Grid</h3>
+              <p>Two-dimensional layouts with rows and columns in CSS.</p>
+              <a href="#" class="card-btn">Learn More</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+
+      <!-- ============================================================
+           DEMO 4: STUDENT DASHBOARD LAYOUT
+           Mobile: stacked → Desktop: sidebar + main
+      ============================================================ -->
+      <section class="demo-section" id="dashboard">
+        <h2>Student Dashboard Layout</h2>
+        <p>On mobile the sidebar stacks on top of the content. On desktop it sits beside it.</p>
+
+        <div class="dashboard">
+
+          <aside class="sidebar">
+            <h3>Menu</h3>
+            <ul class="sidebar-links">
+              <li><a href="#">Dashboard</a></li>
+              <li><a href="#">My Courses</a></li>
+              <li><a href="#">Assignments</a></li>
+              <li><a href="#">Grades</a></li>
+              <li><a href="#">Settings</a></li>
+            </ul>
+          </aside>
+
+          <div class="dashboard-main">
+            <h3>My Progress</h3>
+            <div class="progress-cards">
+              <div class="progress-card">
+                <p class="progress-label">HTML</p>
+                <p class="progress-value">85%</p>
+              </div>
+              <div class="progress-card">
+                <p class="progress-label">CSS</p>
+                <p class="progress-value">70%</p>
+              </div>
+              <div class="progress-card">
+                <p class="progress-label">JavaScript</p>
+                <p class="progress-value">45%</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- ============================================================
+           DEMO 5: RESPONSIVE IMAGES
+      ============================================================ -->
+      <section class="demo-section" id="images">
+        <h2>Responsive Images</h2>
+        <p>
+          Both images use <code>max-width: 100%; height: auto;</code>.
+          They scale down on small screens without overflowing.
+        </p>
+
+        <div class="image-demo">
+          <div class="image-container-sm">
+            <p><strong>Narrow container (300px max)</strong></p>
+            <img
+              src="https://placehold.co/600x300/4f46e5/ffffff?text=Responsive+Image"
+              alt="Responsive image demo"
+              class="responsive-image"
+            />
+          </div>
+
+          <div class="image-container-lg">
+            <p><strong>Full-width container</strong></p>
+            <img
+              src="https://placehold.co/900x300/2a9d8f/ffffff?text=Responsive+Image"
+              alt="Responsive image demo"
+              class="responsive-image"
+            />
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ============================================================
+           DEMO 6: MEDIA QUERY VISUALISER
+           Background colour changes at each breakpoint
+      ============================================================ -->
+      <section class="demo-section">
+        <h2>Media Query Visualiser</h2>
+        <p>This box changes colour at each breakpoint. Resize to see it change.</p>
+
+        <div class="breakpoint-box">
+          <span class="bp-mobile">📱 Mobile (&lt; 768px)</span>
+          <span class="bp-tablet">📱 Tablet (768px – 1023px)</span>
+          <span class="bp-desktop">🖥️ Desktop (1024px+)</span>
+        </div>
+      </section>
+
+    </main>
+
+
+    <footer class="page-footer">
+      <p>BoyCode — Responsive Design Demo</p>
+    </footer>
+
+
+    <!-- Live viewport size display -->
+    <script>
+      function updateSize() {
+        document.getElementById('viewport-size').textContent =
+          window.innerWidth + 'px × ' + window.innerHeight + 'px';
+      }
+      updateSize();
+      window.addEventListener('resize', updateSize);
+    </script>
+
+  </body>
+</html>

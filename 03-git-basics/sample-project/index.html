@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Developer Profile — BoyCode</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+
+    <!--
+      This is the sample project students will commit to GitHub.
+
+      Git exercise steps:
+        1.  cd into this folder (sample-project/)
+        2.  git init
+        3.  git status
+        4.  git add .
+        5.  git commit -m "feat: create developer profile page"
+        6.  git log --oneline
+        7.  Make a change below (e.g., update the name or bio)
+        8.  git status
+        9.  git add .
+        10. git commit -m "feat: update profile details"
+        11. git log --oneline   <-- you now have 2 commits
+        12. Connect to GitHub and push
+    -->
+
+    <header class="profile-header">
+      <div class="avatar-wrapper">
+        <div class="avatar">👨‍💻</div>
+      </div>
+      <h1 class="profile-name">Your Name Here</h1>
+      <p class="profile-role">Junior Web Developer</p>
+      <p class="profile-location">📍 Nairobi, Kenya</p>
+    </header>
+
+    <main class="container">
+
+      <!-- ABOUT -->
+      <section class="card" id="about">
+        <h2>About Me</h2>
+        <p>
+          I am a passionate developer learning HTML, CSS, and JavaScript at BoyCode.
+          I enjoy building things for the web and solving problems with code.
+        </p>
+      </section>
+
+      <!-- SKILLS -->
+      <section class="card" id="skills">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+          <span class="skill-badge">HTML5</span>
+          <span class="skill-badge">CSS3</span>
+          <span class="skill-badge">Git</span>
+          <span class="skill-badge">Responsive Design</span>
+          <span class="skill-badge">Flexbox</span>
+          <span class="skill-badge">CSS Grid</span>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section class="card" id="projects">
+        <h2>Projects</h2>
+
+        <div class="projects-grid">
+          <article class="project-card">
+            <h3>Portfolio Website</h3>
+            <p>A responsive personal portfolio built with HTML and CSS.</p>
+            <a href="#" class="project-link">View Project →</a>
+          </article>
+
+          <article class="project-card">
+            <h3>BoyCode Dashboard</h3>
+            <p>A student progress dashboard with responsive card layout.</p>
+            <a href="#" class="project-link">View Project →</a>
+          </article>
+
+          <article class="project-card">
+            <h3>Recipe App</h3>
+            <p>A recipe finder with search and filter functionality.</p>
+            <a href="#" class="project-link">View Project →</a>
+          </article>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section class="card" id="contact">
+        <h2>Contact</h2>
+        <ul class="contact-list">
+          <li>📧 your.email@example.com</li>
+          <li>🐙 github.com/yourusername</li>
+          <li>🔗 linkedin.com/in/yourprofile</li>
+        </ul>
+      </section>
+
+    </main>
+
+    <footer class="page-footer">
+      <p>Built with HTML &amp; CSS · Committed with Git · BoyCode Class</p>
+    </footer>
+
+  </body>
+</html>

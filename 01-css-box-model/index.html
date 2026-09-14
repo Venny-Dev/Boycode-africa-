@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Box Model — BoyCode</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+
+    <header class="page-header">
+      <h1>CSS Box Model</h1>
+      <p>Open DevTools (F12) and inspect each element to see its box model layers.</p>
+    </header>
+
+    <main class="container">
+
+      <!-- =============================================
+           SECTION 1: THE FOUR LAYERS
+      ============================================== -->
+      <section class="demo-section">
+        <h2>1. The Four Layers</h2>
+        <p>Hover over the box below and inspect it in DevTools.</p>
+
+        <div class="demo-box-layers">
+          <p>I am the <strong>Content</strong>.<br>
+          I have padding, a border, and a margin around me.</p>
+        </div>
+      </section>
+
+      <!-- =============================================
+           SECTION 2: content-box vs border-box
+      ============================================== -->
+      <section class="demo-section">
+        <h2>2. content-box vs border-box</h2>
+        <p>Both boxes have <code>width: 300px</code>, <code>padding: 20px</code>, and <code>border: 5px solid</code>.</p>
+
+        <div class="comparison-wrapper">
+          <div class="box-content-box">
+            <p><strong>content-box</strong></p>
+            <p>Rendered width: 350px</p>
+            <small>(300 + 40 padding + 10 border)</small>
+          </div>
+
+          <div class="box-border-box">
+            <p><strong>border-box</strong></p>
+            <p>Rendered width: 300px</p>
+            <small>(padding & border fit inside)</small>
+          </div>
+        </div>
+      </section>
+
+      <!-- =============================================
+           SECTION 3: PADDING SHORTHAND
+      ============================================== -->
+      <section class="demo-section">
+        <h2>3. Padding Shorthand</h2>
+
+        <div class="padding-demos">
+          <div class="pad-all">padding: 30px (all sides)</div>
+          <div class="pad-tb-lr">padding: 10px 40px (top/bottom | left/right)</div>
+          <div class="pad-four">padding: 5px 20px 40px 60px (T R B L)</div>
+        </div>
+      </section>
+
+      <!-- =============================================
+           SECTION 4: BORDER STYLES & BORDER RADIUS
+      ============================================== -->
+      <section class="demo-section">
+        <h2>4. Border Styles &amp; Border Radius</h2>
+
+        <div class="border-demos">
+          <div class="border-solid">solid</div>
+          <div class="border-dashed">dashed</div>
+          <div class="border-dotted">dotted</div>
+          <div class="border-double">double</div>
+          <div class="border-radius-card">border-radius: 16px</div>
+          <div class="border-circle">circle</div>
+        </div>
+      </section>
+
+      <!-- =============================================
+           SECTION 5: MARGIN & CENTERING
+      ============================================== -->
+      <section class="demo-section">
+        <h2>5. Margin &amp; Centering with margin: 0 auto</h2>
+
+        <div class="centered-box">
+          <p>I am centered using <code>max-width: 400px; margin: 0 auto;</code></p>
+        </div>
+
+        <div class="margin-demo-wrapper">
+          <div class="margin-box">Box 1</div>
+          <div class="margin-box">Box 2</div>
+          <div class="margin-box">Box 3</div>
+        </div>
+      </section>
+
+      <!-- =============================================
+           SECTION 6: DISPLAY PROPERTY
+      ============================================== -->
+      <section class="demo-section">
+        <h2>6. Display Property</h2>
+
+        <h3>block (divs stack vertically)</h3>
+        <div class="display-group">
+            <div class="display-block">Block One</div>
+            <div class="display-block">Block Two</div>
+            <div class="display-block">Block Three</div>
+        </div>
+
+        <h3>inline (spans sit on the same line)</h3>
+        <span class="display-inline">Inline One</span>
+        <span class="display-inline">Inline Two</span>
+        <span class="display-inline">Inline Three</span>
+
+        <h3>inline-block (stays inline but accepts width/height)</h3>
+        <span class="display-inline-block">Btn 1</span>
+        <span class="display-inline-block">Btn 2</span>
+        <span class="display-inline-block">Btn 3</span>
+      </section>
+
+      <!-- =============================================
+           SECTION 7: CSS UNITS
+      ============================================== -->
+      <section class="demo-section">
+        <h2>7. CSS Units</h2>
+
+        <div class="units-grid">
+          <div class="unit-px">300px — fixed pixels</div>
+          <div class="unit-percent">80% — relative to parent</div>
+          <div class="unit-rem">2rem font size</div>
+          <div class="unit-em">1.5em font size</div>
+          <div class="unit-vw">40vw width</div>
+          <div class="unit-vh">10vh height</div>
+        </div>
+      </section>
+
+      <!-- =============================================
+           SECTION 8: PRACTICAL CARD CHALLENGE
+      ============================================== -->
+      <section class="demo-section">
+        <h2>8. Product Card — Putting It All Together</h2>
+        <p>This card uses all four box-model layers plus border-radius.</p>
+
+        <div class="product-card">
+          <img
+            src="https://placehold.co/300x180/4f46e5/ffffff?text=Product+Image"
+            alt="Product placeholder"
+            class="product-image"
+          />
+          <div class="product-body">
+            <h3 class="product-title">Wireless Headphones</h3>
+            <p class="product-description">
+              Premium sound quality with active noise cancellation and
+              40-hour battery life.
+            </p>
+            <p class="product-price">$89.99</p>
+            <button class="product-btn">Add to Cart</button>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="page-footer">
+      <p>BoyCode — CSS Box Model Demo</p>
+    </footer>
+
+  </body>
+</html>

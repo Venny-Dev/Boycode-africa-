@@ -1,0 +1,348 @@
+/* ============================================================
+   GLOBAL RESET & BASE STYLES
+   Apply border-box to every element so declared widths
+   always include padding and border.
+============================================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 16px;           /* base for rem calculations */
+  background-color: #f8f9fa;
+  color: #212529;
+  line-height: 1.6;
+}
+
+code {
+  background-color: #e9ecef;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+
+/* ============================================================
+   PAGE LAYOUT
+============================================================ */
+.page-header {
+  background-color: #4f46e5;
+  color: #ffffff;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.page-header h1 {
+  margin: 0 0 8px;
+  font-size: 2rem;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;      /* centers the container horizontally */
+  padding: 40px 20px;
+}
+
+.page-footer {
+  background-color: #212529;
+  color: #adb5bd;
+  text-align: center;
+  padding: 20px;
+  margin-top: 60px;
+}
+
+
+/* ============================================================
+   DEMO SECTIONS
+============================================================ */
+.demo-section {
+  background-color: #ffffff;
+  border: 1px solid #dee2e6;
+  border-radius: 12px;
+  padding: 32px;
+  margin-bottom: 40px;
+}
+
+.demo-section h2 {
+  margin-top: 0;
+  color: #4f46e5;
+  border-bottom: 2px solid #e9ecef;
+  padding-bottom: 8px;
+}
+
+.demo-section h3 {
+  margin-top: 24px;
+  color: #495057;
+}
+
+
+/* ============================================================
+   SECTION 1: THE FOUR LAYERS
+============================================================ */
+.demo-box-layers {
+  /* Content */
+  width: 300px;
+
+  /* Padding — space between content and border */
+  /* padding: 30px 30px 30px 30px; */
+  /* padding-left: 100px;
+  padding-right: 100px;
+  padding-bottom: 100px;
+  padding-top: 100px; */
+  padding: 30px 30px;
+
+  /* Border — surrounds padding + content */
+  /* border: 5px solid #4f46e5; */
+  border-width: 5px;
+  border-style: solid;
+  border-color: #4f46e5;
+
+  /* Margin — space outside the border */
+  margin: 30px auto;
+
+  background-color: #eef2ff;
+  border-radius: 8px;
+  text-align: center;
+}
+
+
+/* ============================================================
+   SECTION 2: content-box vs border-box
+============================================================ */
+.comparison-wrapper {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+
+/* ---- content-box: padding & border ADD to the declared width ---- */
+.box-content-box {
+  box-sizing: content-box;  /* default — explicit for clarity */
+  width: 300px;
+  padding: 20px;
+  border: 5px solid #e63946;
+  background-color: #fff0f0;
+  border-radius: 8px;
+}
+
+/* ---- border-box: padding & border are INSIDE the declared width ---- */
+.box-border-box {
+  box-sizing: border-box;
+  width: 300px;
+  padding: 20px;
+  border: 5px solid #2a9d8f;
+  background-color: #f0fff8;
+  border-radius: 8px;
+}
+
+
+/* ============================================================
+   SECTION 3: PADDING SHORTHAND
+============================================================ */
+.padding-demos {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.pad-all,
+.pad-tb-lr,
+.pad-four {
+  background-color: #eef2ff;
+  border: 2px solid #4f46e5;
+  border-radius: 6px;
+}
+
+.pad-all   { padding: 30px; }
+.pad-tb-lr { padding: 10px 40px; }
+.pad-four  { padding: 5px 20px 40px 60px; }
+
+
+/* ============================================================
+   SECTION 4: BORDER STYLES & BORDER RADIUS
+============================================================ */
+.border-demos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.border-demos > div {
+  width: 120px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f1f3f5;
+  font-size: 0.875rem;
+}
+
+.border-solid   { border: 3px solid   #212529; }
+.border-dashed  { border: 3px dashed  #212529; }
+.border-dotted  { border: 3px dotted  #212529; }
+.border-double  { border: 6px double  #212529; }
+
+.border-radius-card {
+  border: 3px solid #4f46e5;
+  border-radius: 16px;
+}
+
+.border-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 3px solid #e63946;
+  background-color: #ffe0e3;
+}
+
+
+/* ============================================================
+   SECTION 5: MARGIN & CENTERING
+============================================================ */
+.centered-box {
+  max-width: 400px;
+  margin: 0 auto;           /* horizontal centering */
+  padding: 20px;
+  background-color: #e9ecef;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.margin-demo-wrapper {
+  margin-top: 24px;
+  background-color: #f1f3f5;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.margin-box {
+  background-color: #4f46e5;
+  color: #fff;
+  padding: 16px;
+  margin: 20px;             /* visible gap between each box */
+  border-radius: 6px;
+  text-align: center;
+}
+
+
+/* ============================================================
+   SECTION 6: DISPLAY PROPERTY
+============================================================ */
+.display-block {
+  display: block;
+  background-color: #4f46e5;
+  color: #fff;
+  padding: 12px 20px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+}
+/* .display-group{
+  display:flex;
+} */
+.display-inline {
+  display: inline;
+  background-color: #2a9d8f;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 4px;
+  /* width and height have no effect on inline elements */
+}
+
+.display-inline-block {
+  display: inline-block;
+  width: 100px;           /* now width works because of inline-block */
+  padding: 10px;
+  background-color: #e63946;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  margin: 4px;
+}
+
+
+/* ============================================================
+   SECTION 7: CSS UNITS
+============================================================ */
+.units-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.units-grid > div {
+  padding: 16px;
+  background-color: #eef2ff;
+  border: 1px solid #c5cae9;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.unit-px      { width: 300px; }       /* fixed */
+.unit-percent { width: 80%; }         /* relative to parent */
+.unit-rem     { font-size: 2rem; }    /* relative to <html> font-size */
+.unit-em      { font-size: 1.5em; }   /* relative to this element */
+.unit-vw      { width: 40vw; }        /* 40% of viewport width */
+.unit-vh      { height: 10vh; display: flex; align-items: center; } /* 10% of viewport height */
+
+
+/* ============================================================
+   SECTION 8: PRODUCT CARD
+============================================================ */
+.product-card {
+  max-width: 320px;
+  margin: 0 auto;
+  border: 1px solid #dee2e6;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.product-image {
+  display: block;
+  max-width: 100%;    /* responsive image — never overflows */
+  height: auto;
+}
+
+.product-body {
+  padding: 20px;      /* padding inside the card content area */
+}
+
+.product-title {
+  margin: 0 0 8px;
+  font-size: 1.25rem;
+  color: #212529;
+}
+
+.product-description {
+  margin: 0 0 16px;
+  color: #6c757d;
+  font-size: 0.95rem;
+}
+
+.product-price {
+  margin: 0 0 16px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #4f46e5;
+}
+
+.product-btn {
+  display: inline-block;
+  width: 100%;
+  padding: 12px;
+  background-color: #4f46e5;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.product-btn:hover {
+  background-color: #4338ca;
+}
