@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Flexbox — BoyCode</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+
+    <!-- ============================================================
+         DEMO 1: NAVBAR — the most common flexbox use case
+         justify-content: space-between puts logo on left, links on right
+    ============================================================ -->
+    <header class="navbar">
+      <a href="#" class="logo">BoyCode</a>
+      <nav class="nav-links">
+        <a href="#direction">Direction</a>
+        <a href="#justify">Justify</a>
+        <a href="#align">Align</a>
+        <a href="#wrap">Wrap</a>
+        <a href="#grow">Grow</a>
+        <a href="#patterns">Patterns</a>
+      </nav>
+    </header>
+
+    <!-- ============================================================
+         PAGE HERO — centring with flexbox
+         justify-content: center + align-items: center = perfect centre
+    ============================================================ -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>CSS Flexbox</h1>
+        <p>One-dimensional layouts made simple.</p>
+        <p class="hero-sub">Scroll down to see every property in action.</p>
+      </div>
+    </section>
+
+    <main class="container">
+
+      <!-- ============================================================
+           DEMO 2: flex-direction
+      ============================================================ -->
+      <section class="demo-section" id="direction">
+        <h2>flex-direction</h2>
+        <p>Controls which direction items flow along the main axis.</p>
+
+        <h3>row (default)</h3>
+        <div class="flex-demo direction-row">
+          <div class="item">A</div>
+          <div class="item">B</div>
+          <div class="item">C</div>
+        </div>
+
+        <h3>row-reverse</h3>
+        <div class="flex-demo direction-row-reverse">
+          <div class="item">A</div>
+          <div class="item">B</div>
+          <div class="item">C</div>
+        </div>
+
+        <h3>column</h3>
+        <div class="flex-demo direction-column">
+          <div class="item">A</div>
+          <div class="item">B</div>
+          <div class="item">C</div>
+        </div>
+
+        <h3>column-reverse</h3>
+        <div class="flex-demo direction-column-reverse">
+          <div class="item">A</div>
+          <div class="item">B</div>
+          <div class="item">C</div>
+        </div>
+      </section>
+
+
+      <!-- ============================================================
+           DEMO 3: justify-content
+           Aligns items along the MAIN axis (horizontal in row direction)
+      ============================================================ -->
+      <section class="demo-section" id="justify">
+        <h2>justify-content</h2>
+        <p>Distributes items along the <strong>main axis</strong>.</p>
+
+        <h3>flex-start (default)</h3>
+        <div class="flex-demo justify-start">
+          <div class="item">A</div>
+          <div class="item">B</div>
+          <div class="item">C</div>
+        </div>
+
+        <h3>flex-end</h3>
+        <div class="flex-demo justify-end">
+          <div class="item">A</div>
+          <div class="item">B</div>
+          <div class="item">C</div>
+        </div>
+
+        <h3>center</h3>
+        <div class="flex-demo justify-center">
+          <div class="item">A</div>
+          <div class="item">B</div>
+          <div class="item">C</div>
+        </div>
+
+        <h3>space-between</h3>
+        <div class="flex-demo justify-space-between">
+          <div class="item">A</div>
+          <div class="item">B</div>
+          <div class="item">C</div>
+          <div class="item">D</div>
+          <div class="item">E</div>
+          <div class="item">F</div>
+        </div>
+
+        <h3>space-around</h3>
+        <div class="flex-demo justify-space-around">
+          <div class="item">A</div>
+          <div class="item">B</div>
+          <div class="item">C</div>
+          <div class="item">D</div>
+          <div class="item">E</div>
+          <div class="item">F</div>
+        </div>
+
+        <h3>space-evenly</h3>
+        <div class="flex-demo justify-space-evenly">
+          <div class="item">A</div>
+          <div class="item">B</div>
+          <div class="item">C</div>
+          <div class="item">D</div>
+          <div class="item">E</div>
+          <div class="item">F</div>
+        </div>
+      </section>
+
+
+      <!-- ============================================================
+           DEMO 4: align-items
+           Aligns items along the CROSS axis (vertical in row direction)
+      ============================================================ -->
+      <section class="demo-section" id="align">
+        <h2>align-items</h2>
+        <p>Aligns items along the <strong>cross axis</strong>. The container has a fixed height so the alignment is visible.</p>
+
+        <h3>stretch (default)</h3>
+        <div class="flex-demo tall align-stretch">
+          <div class="item">A</div>
+          <div class="item item-tall">B (tall)</div>
+          <div class="item">C</div>
+        </div>
+
+        <h3>flex-start</h3>
+        <div class="flex-demo tall align-start">
+          <div class="item">A</div>
+          <div class="item item-tall">B (tall)</div>
+          <div class="item">C</div>
+        </div>
+
+        <h3>flex-end</h3>
+        <div class="flex-demo tall align-end">
+          <div class="item">A</div>
+          <div class="item item-tall">B (tall)</div>
+          <div class="item">C</div>
+        </div>
+
+        <h3>center</h3>
+        <div class="flex-demo tall align-center">
+          <div class="item">A</div>
+          <div class="item item-tall">B (tall)</div>
+          <div class="item">C</div>
+        </div>
+
+        <h3>align-self override (item C → flex-end)</h3>
+        <div class="flex-demo tall align-start">
+          <div class="item">A</div>
+          <div class="item">B</div>
+          <div class="item self-end">C (self)
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ============================================================
+           DEMO 5: flex-wrap
+      ============================================================ -->
+      <section class="demo-section" id="wrap">
+        <h2>flex-wrap</h2>
+        <p>Controls whether items wrap onto a new line when they run out of space.</p>
+
+        <h3>nowrap (default) — items may overflow</h3>
+        <div class="flex-demo nowrap">
+          <div class="item wide-item">Item 1</div>
+          <div class="item wide-item">Item 2</div>
+          <div class="item wide-item">Item 3</div>
+          <div class="item wide-item">Item 4</div>
+          <div class="item wide-item">Item 5</div>
+        </div>
+
+        <h3>wrap — items move to the next line</h3>
+        <div class="flex-demo do-wrap">
+          <div class="item wide-item">Item 1</div>
+          <div class="item wide-item">Item 2</div>
+          <div class="item wide-item">Item 3</div>
+          <div class="item wide-item">Item 4</div>
+          <div class="item wide-item">Item 5</div>
+        </div>
+      </section>
+
+
+      <!-- ============================================================
+           DEMO 6: flex-grow, flex-shrink, flex-basis
+      ============================================================ -->
+      <section class="demo-section" id="grow">
+        <h2>flex-grow &amp; flex: 1</h2>
+        <p>Controls how items grow to fill available space.</p>
+
+        <h3>No flex-grow — items stay their natural size</h3>
+        <div class="flex-demo grow-demo">
+          <div class="item no-grow item-3">A</div>
+          <div class="item no-grow item-2">B</div>
+          <div class="item no-grow item-1">C</div>
+        </div>
+
+        <h3>flex: 1 on all — items share space equally</h3>
+        <div class="flex-demo grow-demo">
+          <div class="item grow-1">A</div>
+          <div class="item grow-1">B</div>
+          <div class="item grow-1">C</div>
+        </div>
+
+        <h3>flex-grow: 2 on B — B gets twice the space</h3>
+        <div class="flex-demo grow-demo">
+          <div class="item grow-1">A</div>
+          <div class="item grow-2">B (×2)</div>
+          <div class="item grow-1">C</div>
+        </div>
+
+        <h3>flex-basis: 0 0 200px — items stay at 200px, no grow or shrink</h3>
+        <div class="flex-demo grow-demo do-wrap">
+          <div class="item basis-200">200px</div>
+          <div class="item basis-200">200px</div>
+          <div class="item basis-200">200px</div>
+          <div class="item basis-200">200px</div>
+        </div>
+      </section>
+
+
+      <!-- ============================================================
+           DEMO 7: PERFECT CENTRING
+      ============================================================ -->
+      <section class="demo-section" id="centre">
+        <h2>Perfect Centring</h2>
+        <p><code>justify-content: center</code> + <code>align-items: center</code></p>
+
+        <div class="centre-demo">
+          <div class="centre-box">
+            <p>I am perfectly centred.</p>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ============================================================
+           DEMO 8: REAL-WORLD PATTERNS
+      ============================================================ -->
+      <section class="demo-section" id="patterns">
+        <h2>Real-World Patterns</h2>
+
+        <!-- Pattern A: equal columns -->
+        <h3>Equal-width columns (flex: 1)</h3>
+        <div class="equal-columns">
+          <div class="column">
+            <h4>Column 1</h4>
+            <p>Each column uses <code>flex: 1</code> to share space equally.</p>
+          </div>
+          <div class="column">
+            <h4>Column 2</h4>
+            <p>No matter how many columns you add, they always share space.</p>
+          </div>
+          <div class="column">
+            <h4>Column 3</h4>
+            <p>This is a very common layout pattern in web design.</p>
+          </div>
+        </div>
+
+        <!-- Pattern B: wrapping card row -->
+        <h3>Wrapping card row (flex-wrap: wrap)</h3>
+        <div class="flex-cards">
+          <article class="flex-card">
+            <h4>HTML</h4>
+            <p>Structure of the web.</p>
+          </article>
+          <article class="flex-card">
+            <h4>CSS</h4>
+            <p>Styling and layout.</p>
+          </article>
+          <article class="flex-card">
+            <h4>JavaScript</h4>
+            <p>Interactivity and logic.</p>
+          </article>
+          <article class="flex-card">
+            <h4>Git</h4>
+            <p>Version control.</p>
+          </article>
+          <article class="flex-card">
+            <h4>Flexbox</h4>
+            <p>One-dimensional layouts.</p>
+          </article>
+        </div>
+
+        <!-- Pattern C: media object (icon + text) -->
+        <h3>Media object — icon + text side by side</h3>
+        <div class="media-list">
+          <div class="media-item">
+            <div class="media-icon">🚀</div>
+            <div class="media-body">
+              <strong>Fast</strong>
+              <p>Build layouts quickly without complex float hacks.</p>
+            </div>
+          </div>
+          <div class="media-item">
+            <div class="media-icon">📱</div>
+            <div class="media-body">
+              <strong>Responsive</strong>
+              <p>Combine with media queries for fully adaptive layouts.</p>
+            </div>
+          </div>
+          <div class="media-item">
+            <div class="media-icon">🎯</div>
+            <div class="media-body">
+              <strong>Precise</strong>
+              <p>Control alignment exactly with justify and align properties.</p>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+    </main>
+
+    <footer class="page-footer">
+      <p>BoyCode — CSS Flexbox Demo</p>
+    </footer>
+
+  </body>
+</html>
