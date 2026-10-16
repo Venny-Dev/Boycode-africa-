@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Introduction — BoyCode</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+
+    <header class="page-header">
+      <h1>JavaScript — Introduction</h1>
+      <p>Open DevTools (F12) → Console to see <code>console.log()</code> output.</p>
+    </header>
+
+    <main class="container">
+
+      <!-- =============================================
+           SECTION 1: HTML vs CSS vs JS
+      ============================================== -->
+      <section class="demo-section">
+        <h2>1. HTML vs CSS vs JavaScript</h2>
+        <p>Every webpage is built from three languages, each with a different role.</p>
+
+        <div class="role-table">
+          <div class="role-card role-html">
+            <span>🏗️</span>
+            HTML
+            <small>Structure</small>
+          </div>
+          <div class="role-card role-css">
+            <span>🎨</span>
+            CSS
+            <small>Presentation</small>
+          </div>
+          <div class="role-card role-js">
+            <span>⚡</span>
+            JavaScript
+            <small>Behaviour</small>
+          </div>
+        </div>
+      </section>
+
+      <!-- =============================================
+           SECTION 2: JavaScript Engines
+      ============================================== -->
+      <section class="demo-section">
+        <h2>2. JavaScript Engines</h2>
+        <p>
+          Every browser has a built-in engine that reads and executes your JavaScript.
+          You never interact with the engine directly — you just write code and the
+          browser does the rest.
+        </p>
+
+        <table class="engine-table">
+          <thead>
+            <tr>
+              <th>Browser</th>
+              <th>JavaScript Engine</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Chrome</td><td>V8</td></tr>
+            <tr><td>Edge</td><td>V8</td></tr>
+            <tr><td>Firefox</td><td>SpiderMonkey</td></tr>
+            <tr><td>Safari</td><td>JavaScriptCore</td></tr>
+          </tbody>
+        </table>
+
+        <p style="margin-top: 16px;">
+          Chrome's <strong>V8</strong> engine also powers <strong>Node.js</strong>,
+          which is why JavaScript can run on a server too.
+        </p>
+      </section>
+
+      <!-- =============================================
+           SECTION 3: console.log()
+      ============================================== -->
+      <section class="demo-section">
+        <h2>3. console.log() — Printing to the Console</h2>
+        <p>
+          Open DevTools → Console and you will see the output from
+          <code>script.js</code>. Here is what it looks like:
+        </p>
+
+        <div class="console-demo">
+          <div class="console-line">
+            <span class="console-arrow">&gt;</span>
+            <span class="console-input">console.log("Hello World");</span>
+          </div>
+          <div class="console-line">
+            <span class="console-arrow">←</span>
+            <span class="console-output">Hello World</span>
+          </div>
+
+          <div class="console-line" style="margin-top: 8px;">
+            <span class="console-arrow">&gt;</span>
+            <span class="console-input">console.log(10 + 5);</span>
+          </div>
+          <div class="console-line">
+            <span class="console-arrow">←</span>
+            <span class="console-output">15</span>
+          </div>
+
+          <div class="console-line" style="margin-top: 8px;">
+            <span class="console-arrow">&gt;</span>
+            <span class="console-input">console.log("Victor");</span>
+          </div>
+          <div class="console-line">
+            <span class="console-arrow">←</span>
+            <span class="console-output">Victor</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- =============================================
+           SECTION 4: What JavaScript Can Do
+           Live DOM demo — buttons trigger script.js functions
+      ============================================== -->
+      <section class="demo-section">
+        <h2>4. What JavaScript Can Do — Live Demo</h2>
+        <p>
+          Click the buttons below. JavaScript will change the content and
+          styles of elements on this page in real time.
+        </p>
+
+        <div class="dom-demo">
+          <div id="demo-heading">This heading can be changed by JavaScript.</div>
+          <div id="demo-box">This box can be restyled by JavaScript.</div>
+        </div>
+
+        <div class="btn-group">
+          <button class="btn btn-primary" onclick="changeHeading()">
+            Change Heading Text
+          </button>
+          <button class="btn btn-warning" onclick="changeStyle()">
+            Change Box Style
+          </button>
+          <button class="btn btn-danger" onclick="showAlert()">
+            Show Alert
+          </button>
+        </div>
+      </section>
+
+      <!-- =============================================
+           SECTION 5: Adding JavaScript to HTML
+      ============================================== -->
+      <section class="demo-section">
+        <h2>5. Adding JavaScript to HTML</h2>
+        <p>Three approaches — from least to most preferred.</p>
+
+        <div class="script-tag-demos">
+
+          <div class="script-tag-block">
+            <p class="label">1. Inline (avoid for large scripts)</p>
+            <pre>&lt;button onclick="alert('Hello')"&gt;Click Me&lt;/button&gt;</pre>
+          </div>
+          <!-- <button onclick="console.log('I was clicked again')">Click Me</button> -->
+          <!-- <button onkeydown="console.log('my keyboard was clicked');">Click Me</button> -->
+          <!-- <button /="console.log('my keyboard was clicked');">Click Me</button> -->
+
+
+          <div class="script-tag-block">
+            <p class="label">2. Internal (inside the HTML file)</p>
+            <pre>&lt;script&gt;
+  console.log("Hello World");
+&lt;/script&gt;</pre>
+          </div>
+
+          <div class="script-tag-block">
+            <p class="label">3. External ✅ Preferred</p>
+            <pre>&lt;!-- In your HTML file --&gt;
+&lt;script src="script.js"&gt;&lt;/script&gt;
+
+/* In script.js */
+console.log("Hello World");</pre>
+          </div>
+
+        </div>
+
+        <p style="margin-top: 16px;">
+          Place the <code>&lt;script&gt;</code> tag at the <strong>bottom of
+          <code>&lt;body&gt;</code></strong> so the HTML is fully loaded before
+          JavaScript runs.
+        </p>
+      </section>
+
+      <!-- =============================================
+           SECTION 6: Statements and Comments
+      ============================================== -->
+      <section class="demo-section">
+        <h2>6. Statements &amp; Comments</h2>
+
+        <p>
+          A <strong>statement</strong> is one instruction for JavaScript to execute.
+          A <strong>comment</strong> is a note for developers — JavaScript ignores it.
+        </p>
+
+        <div class="script-tag-block">
+          <p class="label">Statements</p>
+          <pre>let name = "Victor";   // statement 1
+console.log(name);     // statement 2</pre>
+        </div>
+
+        <div class="script-tag-block" style="margin-top: 12px;">
+          <p class="label">Comments</p>
+          <pre>// Single-line comment
+
+/*
+  Multi-line comment
+  spans multiple lines
+*/</pre>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="page-footer">
+      <p>BoyCode — JavaScript Introduction</p>
+      
+    </footer>
+    
+
+    <!-- <script>
+            console.log('hello from html')
+    </script> -->
+
+    <!-- External script — placed at the bottom of body -->
+    <script src="script.js">
+            console.log('hello from html')
+    </script>
+  </body>
+</html>

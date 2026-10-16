@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Variables &amp; Data Types — BoyCode</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+
+    <header class="page-header">
+      <h1>JavaScript — Variables &amp; Data Types</h1>
+      <p>Open DevTools (F12) → Console to see all <code>console.log()</code> output.</p>
+    </header>
+
+    <main class="container">
+
+      <!-- =============================================
+           SECTION 1: let / const / var comparison
+      ============================================== -->
+      <section class="demo-section">
+        <h2>1. let, const, and var</h2>
+        <p>JavaScript has three keywords for declaring variables. Understanding when to use each is important.</p>
+
+        <table class="var-table">
+          <thead>
+            <tr>
+              <th>Keyword</th>
+              <th>Can Reassign?</th>
+              <th>Era</th>
+              <th>Advice</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>const</code></td>
+              <td>No</td>
+              <td>ES6 (Modern)</td>
+              <td><span class="tag-prefer">Use by default</span></td>
+            </tr>
+            <tr>
+              <td><code>let</code></td>
+              <td>Yes</td>
+              <td>ES6 (Modern)</td>
+              <td><span class="tag-prefer">Use when value changes</span></td>
+            </tr>
+            <tr>
+              <td><code>var</code></td>
+              <td>Yes</td>
+              <td>Pre-2015</td>
+              <td><span class="tag-avoid">Avoid in new code</span></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <pre class="code-block">
+// const — value stays the same
+const country = "Nigeria";
+
+// let — value can change
+let age = 20;
+age = 21;  // ✅ fine
+console.log(age); // 21
+
+// const — reassignment throws an error
+// country = "Ghana"; // ❌ TypeError
+        </pre>
+      </section>
+
+      <!-- =============================================
+           SECTION 2: Naming Rules
+      ============================================== -->
+      <section class="demo-section">
+        <h2>2. Variable Naming Rules</h2>
+        <p>Variable names must follow these rules.</p>
+
+        <pre class="code-block">
+// ✅ Valid names
+let firstName = "Victor";
+let age = 20;
+let _count = 0;
+let $price = 100;
+
+// ❌ Invalid names
+// let 2name = "Victor";   → cannot start with a number
+// let my name = "John";   → no spaces allowed
+// let let = "test";       → reserved word
+
+// JavaScript is case-sensitive
+let firstName2 = "Victor";
+let FirstName  = "John";   // different variable!
+        </pre>
+      </section>
+
+      <!-- =============================================
+           SECTION 3: Data Types overview
+      ============================================== -->
+      <section class="demo-section">
+        <h2>3. The Seven Core Data Types</h2>
+        <p>JavaScript has seven data types beginners need to know.</p>
+
+        <div class="types-grid">
+          <div class="type-pill pill-string">
+            String
+            <span>"Hello", 'Victor'</span>
+          </div>
+          <div class="type-pill pill-number">
+            Number
+            <span>20, 3.14, -100</span>
+          </div>
+          <div class="type-pill pill-boolean">
+            Boolean
+            <span>true, false</span>
+          </div>
+          <div class="type-pill pill-undefined">
+            Undefined
+            <span>declared, no value</span>
+          </div>
+          <div class="type-pill pill-null">
+            Null
+            <span>intentionally empty</span>
+          </div>
+          <div class="type-pill pill-object">
+            Object
+            <span>{ key: value }</span>
+          </div>
+          <div class="type-pill pill-array">
+            Array
+            <span>["a", "b", "c"]</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- =============================================
+           SECTION 4: Strings & Template Literals
+      ============================================== -->
+      <section class="demo-section">
+        <h2>4. Strings &amp; Template Literals</h2>
+        <p>Strings store text. Template literals (backticks) let you embed variables directly.</p>
+
+        <pre class="code-block">
+const name = "Victor";
+const age = 25;
+
+// Old way — concatenation
+console.log("Hello " + name + ", you are " + age + " years old.");
+
+// Modern way — template literal
+console.log(`Hello ${name}, you are ${age} years old.`);
+// Output: Hello Victor, you are 25 years old.
+
+// Expressions inside ${}
+console.log(`10 + 5 = ${10 + 5}`);
+// Output: 10 + 5 = 15
+        </pre>
+      </section>
+
+      <!-- =============================================
+           SECTION 5: Objects
+      ============================================== -->
+      <section class="demo-section">
+        <h2>5. Objects</h2>
+        <p>An object groups related data as key-value pairs.</p>
+
+        <div class="object-demo">
+          <p>
+            <span class="obj-key">const user</span> = {
+          </p>
+          <p style="padding-left: 20px;">
+            <span class="obj-key">name</span>: <span class="obj-string">"Victor"</span>,
+          </p>
+          <p style="padding-left: 20px;">
+            <span class="obj-key">age</span>: <span class="obj-value">25</span>,
+          </p>
+          <p style="padding-left: 20px;">
+            <span class="obj-key">country</span>: <span class="obj-string">"Nigeria"</span>
+          </p>
+          <p>};</p>
+        </div>
+
+        <pre class="code-block" style="margin-top: 12px;">
+// Dot notation — most common
+console.log(user.name);    // Victor
+console.log(user.age);     // 25
+
+// Bracket notation
+console.log(user["country"]); // Nigeria
+        </pre>
+      </section>
+
+      <!-- =============================================
+           SECTION 6: Arrays
+      ============================================== -->
+      <section class="demo-section">
+        <h2>6. Arrays</h2>
+        <p>
+          Arrays store an ordered list of values. Each item has an
+          <strong>index starting at 0</strong>.
+        </p>
+
+        <div class="array-visual">
+          <div class="array-cell">
+            <div class="value">"Apple"</div>
+            <div class="index">index 0</div>
+          </div>
+          <div class="array-cell">
+            <div class="value">"Mango"</div>
+            <div class="index">index 1</div>
+          </div>
+          <div class="array-cell">
+            <div class="value">"Orange"</div>
+            <div class="index">index 2</div>
+          </div>
+        </div>
+
+        <pre class="code-block" style="margin-top: 12px;">
+const fruits = ["Apple", "Mango", "Orange"];
+
+console.log(fruits[0]); // Apple
+console.log(fruits[1]); // Mango
+console.log(fruits[2]); // Orange
+
+console.log(fruits.length); // 3
+        </pre>
+      </section>
+
+      <!-- =============================================
+           SECTION 7: typeof explorer (interactive)
+      ============================================== -->
+      <section class="demo-section">
+        <h2>7. typeof — Check a Data Type</h2>
+        <p>Click a type below to see its value and what <code>typeof</code> returns.</p>
+
+        <div class="type-explorer">
+          <div class="type-buttons">
+            <button class="type-btn" onclick="updateCard('string')">String</button>
+            <button class="type-btn" onclick="updateCard('number')">Number</button>
+            <button class="type-btn" onclick="updateCard('boolean')">Boolean</button>
+            <button class="type-btn" onclick="updateCard('undefined')">Undefined</button>
+            <button class="type-btn" onclick="updateCard('null')">Null</button>
+            <button class="type-btn" onclick="updateCard('object')">Object</button>
+            <button class="type-btn" onclick="updateCard('array')">Array</button>
+          </div>
+
+          <div class="type-card" id="type-display">
+            <span id="type-value">← Click a type above</span>
+            <span id="type-typeof"></span>
+          </div>
+        </div>
+
+        <pre class="code-block" style="margin-top: 16px;">
+typeof "Hello";     // "string"
+typeof 20;          // "number"
+typeof true;        // "boolean"
+typeof undefined;   // "undefined"
+typeof null;        // "object"  ← quirk!
+typeof {};          // "object"
+typeof [];          // "object"  ← arrays are objects
+        </pre>
+      </section>
+
+    </main>
+
+    <footer class="page-footer">
+      <p>BoyCode — JavaScript Variables &amp; Data Types</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

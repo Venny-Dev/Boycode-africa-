@@ -89,7 +89,7 @@ Defines the number and size of **columns**.
 .container {
   grid-template-columns: 200px 200px 200px;  /* 3 fixed columns */
   grid-template-columns: 1fr 1fr 1fr;        /* 3 equal columns */
-  grid-template-columns: repeat(3, 1fr);     /* same as above */
+  grid-template-columns: repeat(4, 1fr);     /* same as above */
   grid-template-columns: 200px 1fr;          /* fixed sidebar + flexible main */
   grid-template-columns: repeat(4, 1fr);     /* 4 equal columns */
 }
@@ -103,7 +103,7 @@ repeat(3, 1fr):
 │    1fr     │    1fr     │    1fr     │
 └────────────┴────────────┴────────────┘
 
-200px 1fr:
+200px  1fr:
 ┌──────────┬────────────────────────────┐
 │  200px   │           1fr              │
 └──────────┴────────────────────────────┘

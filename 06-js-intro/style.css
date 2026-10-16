@@ -1,0 +1,290 @@
+/* ============================================================
+   06 — JavaScript Introduction — Styles
+   ============================================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background: #f8f9fa;
+  color: #212529;
+  line-height: 1.6;
+}
+
+/* ----------------------------------------------------------
+   Page Header
+---------------------------------------------------------- */
+.page-header {
+  background: #1a1a2e;
+  color: #fff;
+  padding: 40px 24px;
+  text-align: center;
+}
+
+.page-header h1 {
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+.page-header p {
+  color: #adb5bd;
+  font-size: 0.95rem;
+}
+
+/* ----------------------------------------------------------
+   Layout
+---------------------------------------------------------- */
+.container {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 40px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+/* ----------------------------------------------------------
+   Demo Sections
+---------------------------------------------------------- */
+.demo-section {
+  background: #fff;
+  border-radius: 12px;
+  padding: 28px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.demo-section h2 {
+  font-size: 1.25rem;
+  margin-bottom: 12px;
+  color: #1a1a2e;
+  border-bottom: 2px solid #e9ecef;
+  padding-bottom: 8px;
+}
+
+.demo-section p {
+  color: #495057;
+  margin-bottom: 16px;
+  font-size: 0.95rem;
+}
+
+code {
+  background: #f1f3f5;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  font-family: 'Courier New', monospace;
+}
+
+/* ----------------------------------------------------------
+   Role Table
+---------------------------------------------------------- */
+.role-table {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.role-card {
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.role-html {
+  background: #fff3e0;
+  color: #e65100;
+  border: 2px solid #ffcc80;
+}
+
+.role-css {
+  background: #e3f2fd;
+  color: #0d47a1;
+  border: 2px solid #90caf9;
+}
+
+.role-js {
+  background: #fffde7;
+  color: #f57f17;
+  border: 2px solid #fff176;
+}
+
+.role-card span {
+  display: block;
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+.role-card small {
+  font-weight: 400;
+  font-size: 0.8rem;
+}
+
+/* ----------------------------------------------------------
+   Console Output Demo
+---------------------------------------------------------- */
+.console-demo {
+  background: #1e1e1e;
+  border-radius: 8px;
+  padding: 20px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.875rem;
+}
+
+.console-line {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+
+.console-arrow {
+  color: #569cd6;
+  user-select: none;
+}
+
+.console-input {
+  color: #d4d4d4;
+}
+
+.console-output {
+  color: #4ec9b0;
+}
+
+/* ----------------------------------------------------------
+   DOM Demo
+---------------------------------------------------------- */
+.dom-demo {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+#demo-heading {
+  font-size: 1.3rem;
+  color: #1a1a2e;
+  padding: 12px;
+  background: #f1f3f5;
+  border-radius: 8px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+#demo-box {
+  padding: 16px;
+  background: #e9ecef;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+/* ----------------------------------------------------------
+   Buttons
+---------------------------------------------------------- */
+.btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.btn:hover {
+  opacity: 0.85;
+}
+
+.btn-primary {
+  background: #4f46e5;
+  color: #fff;
+}
+
+.btn-warning {
+  background: #f59e0b;
+  color: #fff;
+}
+
+.btn-danger {
+  background: #ef4444;
+  color: #fff;
+}
+
+/* ----------------------------------------------------------
+   Engine Table
+---------------------------------------------------------- */
+.engine-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.engine-table th,
+.engine-table td {
+  padding: 10px 14px;
+  border: 1px solid #dee2e6;
+  text-align: left;
+}
+
+.engine-table th {
+  background: #f1f3f5;
+  font-weight: 600;
+}
+
+.engine-table tr:nth-child(even) {
+  background: #f8f9fa;
+}
+
+/* ----------------------------------------------------------
+   Script Tag Demo
+---------------------------------------------------------- */
+.script-tag-demos {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.script-tag-block {
+  background: #1e1e1e;
+  border-radius: 8px;
+  padding: 16px 20px;
+}
+
+.script-tag-block .label {
+  color: #569cd6;
+  font-size: 0.75rem;
+  font-family: 'Courier New', monospace;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.script-tag-block pre {
+  color: #d4d4d4;
+  font-family: 'Courier New', monospace;
+  font-size: 0.85rem;
+  white-space: pre-wrap;
+}
+
+/* ----------------------------------------------------------
+   Footer
+---------------------------------------------------------- */
+.page-footer {
+  text-align: center;
+  padding: 24px;
+  color: #6c757d;
+  font-size: 0.875rem;
+  border-top: 1px solid #dee2e6;
+}

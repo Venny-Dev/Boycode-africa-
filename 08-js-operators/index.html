@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Operators — BoyCode</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+
+    <header class="page-header">
+      <h1>JavaScript — Operators</h1>
+      <p>Open DevTools (F12) → Console to see all <code>console.log()</code> output.</p>
+    </header>
+
+    <main class="container">
+
+      <!-- =============================================
+           SECTION 1: Arithmetic Operators
+      ============================================== -->
+      <section class="demo-section">
+        <h2>1. Arithmetic Operators</h2>
+        <p>Perform maths on numbers. Results are always a Number (except <code>+</code> with strings).</p>
+
+        <table class="op-table">
+          <thead>
+            <tr>
+              <th>Operator</th>
+              <th>Name</th>
+              <th>Example</th>
+              <th>Result</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>+</td><td>Addition</td><td><code>10 + 5</code></td><td>15</td></tr>
+            <tr><td>-</td><td>Subtraction</td><td><code>10 - 5</code></td><td>5</td></tr>
+            <tr><td>*</td><td>Multiplication</td><td><code>10 * 5</code></td><td>50</td></tr>
+            <tr><td>/</td><td>Division</td><td><code>10 / 5</code></td><td>2</td></tr>
+            <tr><td>%</td><td>Remainder</td><td><code>10 % 3</code></td><td>1</td></tr>
+            <tr><td>**</td><td>Exponentiation</td><td><code>2 ** 3</code></td><td>8</td></tr>
+          </tbody>
+        </table>
+
+        <pre class="code-block">
+console.log(10 + 5);  // 15
+console.log(10 % 3);  // 1  ← remainder of 10 ÷ 3
+console.log(2 ** 3);  // 8  ← 2³
+
+// Watch out — + with strings joins them:
+console.log("5" + 5); // "55" ← not 10!
+        </pre>
+      </section>
+
+      <!-- =============================================
+           SECTION 2: Interactive Calculator
+      ============================================== -->
+      <section class="demo-section">
+        <h2>2. Mini Calculator — Live Demo</h2>
+        <p>Enter two numbers and pick an operator. JavaScript calculates the result.</p>
+
+        <div class="calculator">
+          <div class="calc-inputs">
+            <input type="number" id="num1" value="10" />
+            <select id="operator">
+              <option value="+">+</option>
+              <option value="-">−</option>
+              <option value="*">×</option>
+              <option value="/">/</option>
+              <option value="%">%</option>
+              <option value="**">**</option>
+            </select>
+            <input type="number" id="num2" value="5" />
+            <button class="btn-calc" onclick="calculate()">Calculate</button>
+          </div>
+          <div id="calc-result">Result will appear here</div>
+        </div>
+      </section>
+
+      <!-- =============================================
+           SECTION 3: Assignment Operators
+      ============================================== -->
+      <section class="demo-section">
+        <h2>3. Assignment Operators</h2>
+        <p>Shorthand ways to update a variable's value.</p>
+
+        <table class="op-table">
+          <thead>
+            <tr>
+              <th>Operator</th>
+              <th>Example</th>
+              <th>Equivalent to</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>=</td><td><code>x = 5</code></td><td>Assign 5</td></tr>
+            <tr><td>+=</td><td><code>x += 5</code></td><td><code>x = x + 5</code></td></tr>
+            <tr><td>-=</td><td><code>x -= 5</code></td><td><code>x = x - 5</code></td></tr>
+            <tr><td>*=</td><td><code>x *= 2</code></td><td><code>x = x * 2</code></td></tr>
+            <tr><td>/=</td><td><code>x /= 2</code></td><td><code>x = x / 2</code></td></tr>
+            <tr><td>++</td><td><code>x++</code></td><td><code>x = x + 1</code></td></tr>
+            <tr><td>--</td><td><code>x--</code></td><td><code>x = x - 1</code></td></tr>
+          </tbody>
+        </table>
+
+        <pre class="code-block">
+let score = 10;
+score += 5;  // 15
+score -= 3;  // 12
+score *= 2;  // 24
+console.log(score); // 24
+        </pre>
+      </section>
+
+      <!-- =============================================
+           SECTION 4: == vs ===
+      ============================================== -->
+      <section class="demo-section">
+        <h2>4. == vs === (Loose vs Strict Equality)</h2>
+        <p>
+          This is one of the most important distinctions in JavaScript.
+          Always prefer <code>===</code>.
+        </p>
+
+        <div class="equality-cards">
+          <div class="eq-card eq-loose">
+            <h3>== Loose equality</h3>
+            <p style="font-size:0.85rem; margin-bottom: 8px;">
+              JavaScript converts types before comparing — can produce surprising results.
+            </p>
+            <pre class="code-block">
+5 == "5"   // true ⚠️
+0 == false // true ⚠️</pre>
+          </div>
+
+          <div class="eq-card eq-strict">
+            <h3>=== Strict equality ✅</h3>
+            <p style="font-size:0.85rem; margin-bottom: 8px;">
+              Both value <em>and</em> type must match. No surprises.
+            </p>
+            <pre class="code-block">
+5 === "5"   // false ✅
+0 === false // false ✅</pre>
+          </div>
+        </div>
+
+        <p style="margin-top: 16px;">Try it — type two values and compare them:</p>
+
+        <div class="cmp-demo">
+          <div class="cmp-inputs">
+            <input type="text" id="cmp1" value="5" placeholder="value 1" />
+            <span>vs</span>
+            <input type="text" id="cmp2" value="5" placeholder="value 2" />
+            <button class="btn-calc" onclick="compareValues()">Compare</button>
+          </div>
+          <div id="cmp-output"></div>
+        </div>
+      </section>
+
+      <!-- =============================================
+           SECTION 5: Logical Operators
+      ============================================== -->
+      <section class="demo-section">
+        <h2>5. Logical Operators</h2>
+        <p>Combine or reverse conditions. Always return a Boolean.</p>
+
+        <div class="logical-grid">
+          <div class="logical-card logical-and">
+            <span class="op">&amp;&amp;</span>
+            AND
+            <p class="rule">Both must be true</p>
+          </div>
+          <div class="logical-card logical-or">
+            <span class="op">||</span>
+            OR
+            <p class="rule">At least one must be true</p>
+          </div>
+          <div class="logical-card logical-not">
+            <span class="op">!</span>
+            NOT
+            <p class="rule">Reverses a boolean</p>
+          </div>
+        </div>
+
+        <pre class="code-block" style="margin-top: 16px;">
+const age = 20;
+const hasId = true;
+
+// AND — both must be true
+console.log(age >= 18 && hasId); // true
+
+// OR — at least one must be true
+const isAdmin = false;
+const isOwner = true;
+console.log(isAdmin || isOwner); // true
+
+// NOT — reverses the value
+console.log(!true);  // false
+console.log(!false); // true
+        </pre>
+      </section>
+
+      <!-- =============================================
+           SECTION 6: Ternary Operator — live demo
+      ============================================== -->
+      <section class="demo-section">
+        <h2>6. Ternary Operator</h2>
+        <p>
+          A compact <code>if/else</code> in one line:
+          <code>condition ? valueIfTrue : valueIfFalse</code>
+        </p>
+
+        <pre class="code-block">
+// Instead of:
+if (age >= 18) {
+  status = "Adult";
+} else {
+  status = "Minor";
+}
+
+// You can write:
+const status = age >= 18 ? "Adult" : "Minor";
+        </pre>
+
+        <p style="margin-top: 16px;">Try it — enter an age:</p>
+
+        <div class="age-check">
+          <div class="age-check-row">
+            <input type="number" id="age-input" value="17" min="0" max="120" />
+            <button class="btn-calc" onclick="checkAge()">Check</button>
+          </div>
+          <div class="result-display" id="age-result">
+            Result will appear here
+          </div>
+        </div>
+      </section>
+
+      <!-- =============================================
+           SECTION 7: Operator Precedence
+      ============================================== -->
+      <section class="demo-section">
+        <h2>7. Operator Precedence</h2>
+        <p>
+          JavaScript evaluates expressions in a specific order. Multiplication
+          and division happen before addition and subtraction — just like in maths.
+          Use parentheses to control the order.
+        </p>
+
+        <pre class="code-block">
+10 + 5 * 2    // → 10 + 10 → 20  (multiplication first)
+(10 + 5) * 2  // → 15 * 2  → 30  (parentheses first)
+
+let result  = 10 + 5 * 2;   // 20
+let result2 = (10 + 5) * 2; // 30
+        </pre>
+      </section>
+
+      <!-- =============================================
+           SECTION 8: Type Conversion
+      ============================================== -->
+      <section class="demo-section">
+        <h2>8. Type Conversion</h2>
+        <p>Convert values between types explicitly to avoid unexpected results.</p>
+
+        <table class="op-table">
+          <thead>
+            <tr>
+              <th>Function</th>
+              <th>Converts to</th>
+              <th>Example</th>
+              <th>Result</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Number()</td>
+              <td>Number</td>
+              <td><code>Number("20")</code></td>
+              <td>20</td>
+            </tr>
+            <tr>
+              <td>String()</td>
+              <td>String</td>
+              <td><code>String(100)</code></td>
+              <td>"100"</td>
+            </tr>
+            <tr>
+              <td>Boolean()</td>
+              <td>Boolean</td>
+              <td><code>Boolean(0)</code></td>
+              <td>false</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <pre class="code-block" style="margin-top: 16px;">
+// Falsy values — treated as false in a Boolean context:
+Boolean(false);     // false
+Boolean(0);         // false
+Boolean("");        // false
+Boolean(null);      // false
+Boolean(undefined); // false
+Boolean(NaN);       // false
+
+// Everything else is truthy:
+Boolean(1);         // true
+Boolean("hello");   // true
+Boolean([]);        // true (empty array!)
+Boolean({});        // true (empty object!)
+        </pre>
+      </section>
+
+    </main>
+
+    <footer class="page-footer">
+      <p>BoyCode — JavaScript Operators</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
