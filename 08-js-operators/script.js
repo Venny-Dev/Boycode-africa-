@@ -12,8 +12,8 @@ console.log(10 + 5); // 15
 console.log(10 - 5); // 5
 console.log(10 * 5); // 50
 console.log(10 / 5); // 2
-console.log(10 % 3); // 1  ← remainder
-console.log(2 ** 3); // 8  ← exponentiation
+console.log(20 % 3); // 1  ← remainder
+console.log(2 ** 5); // 8  ← exponentiation
 
 // Modulus: check even or odd
 console.log(10 % 2); // 0 → even
@@ -29,18 +29,24 @@ console.log("5" + 5); // "55" ← watch out!
 // ----------------------------------------------------------
 console.log("--- Assignment ---");
 let score = 10;
-score += 5;
+score +=  5;
 console.log(score); // 15
 score -= 3;
 console.log(score); // 12
 score *= 2;
 console.log(score); // 24
 
-let count = 0;
+let count = 10;
+// count = count + 1 //
+// console.log(count);
+count++; // same as: count = count + 1  
+count += 5 // next line would be 6
+console.log(count); // 16
 count++;
-count++;
-count--;
-console.log(count); // 1
+console.log(count); // 17
+count--; //16
+ count -= 10
+console.log(count); // 6
 
 
 // ----------------------------------------------------------
@@ -53,6 +59,8 @@ console.log(10 >= 10); // true
 console.log(5 <= 10);  // true
 console.log(5 === 5);  // true
 console.log(5 !== "5");// true
+// !yes == no
+// !no == yes
 
 
 // ----------------------------------------------------------
@@ -61,8 +69,17 @@ console.log(5 !== "5");// true
 console.log("--- == vs === ---");
 console.log(5 == "5");  // true  ← type coercion happens
 console.log(5 === "5"); // false ← strict, no coercion
-console.log(0 == false);  // true
-console.log(0 === false); // false
+console.log(0 == false);  // true // 0 = false, 1 = true
+console.log(0 === false); //  false
+console.log(!false); // true
+console.log(!true); //false
+
+console.log(0 !== 0); //false // strict, type check
+console.log(0 != 0); // false  less strict or no type check
+console.log(0 !== "0"); // true
+// compare non integers
+
+console.log('mango' == 'mango');
 
 
 // ----------------------------------------------------------
@@ -72,7 +89,23 @@ console.log("--- Logical ---");
 const age = 20;
 const hasId = true;
 
-console.log(age >= 18 && hasId); // true  (both true)
+// AND, OR
+// &&, ||
+
+// true && true = true
+// true && false = false; 
+// true && true && true && true && false = false
+// false && false = false
+// true || true = true
+// false || false || false || false || true  || 1 = true
+// true || false = true
+// false || false = false
+
+console.log(false && true || true || false); // true
+console.log(false && true || true && false); // false
+
+            // true   &&   true            true
+console.log(age >= 18 && hasId === true); // true  (both true)
 console.log(age >= 18 && !hasId); // false (second is false)
 
 const isAdmin = false;
@@ -87,9 +120,18 @@ console.log(!false); // true
 // 6. Ternary Operator
 // ----------------------------------------------------------
 console.log("--- Ternary ---");
-const userAge = 17;
-const status = userAge >= 18 ? "Adult" : "Minor";
+const userAge = 27;
+const status = userAge >=18 ? "Adult" : "Minor";
+
+let status2 
+if(userAge >=18 ){
+status2 = "Adult"
+} else{
+  status2 = 'Minor'
+}
+
 console.log(status); // Minor
+console.log(status2);
 
 const points = 75;
 const result = points >= 50 ? "Pass" : "Fail";
