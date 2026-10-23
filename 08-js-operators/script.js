@@ -153,13 +153,53 @@ console.log("--- Type Conversion ---");
 const ageStr = "20";
 console.log(typeof ageStr);          // string
 console.log(typeof Number(ageStr));  // number
+console.log(typeof +ageStr);  // number
 console.log(Number(ageStr) + 5);     // 25
+console.log(+ageStr + 5);     // 25
 
 console.log(String(100));            // "100"
 console.log(Boolean(0));             // false
 console.log(Boolean("hello"));       // true
 console.log(Boolean(""));            // false
 console.log(Boolean(null));          // false
+
+// const age4 = 'This suppose to be my age'
+
+// const user ={
+//   name:'Victor',
+//   age: age4
+// }
+// console.log(user.age);
+
+function addTwoNumbers (num1, num2){ //parameters
+  // const number1 = 40
+  // const number2 = 50
+
+  console.log(num1 + num2);
+}
+
+addTwoNumbers(40, 50, ) //arguments
+// addTwoNumbers()
+
+function greetUser(name, greeting, location){
+
+ console.log(`Hello ${name}, Good ${greeting}, hope you're good did you go to ${location}  today?`);
+//  console.log(`Hello Bello, Good Evening, hope you're good, did you go to work today?`);
+
+}
+
+greetUser("Bello", "Evening", "work", )
+
+
+
+
+
+// Variable names
+// const listflocalgovtsinlagos  ❌
+// const listOfLocalGovtsInLagos  ✅
+// const listOfLGAInLagos ✅
+
+// const list_of_local_govts_in_lagos
 
 
 // ----------------------------------------------------------
@@ -217,3 +257,5 @@ function compareValues() {
     `<span class="cmp-row"><code>${val1} ==  ${val2}</code> → <strong>${loose}</strong>  (loose)</span>` +
     `<span class="cmp-row"><code>${val1} === ${val2}</code> → <strong>${strict}</strong> (strict)</span>`;
 }
+
+
